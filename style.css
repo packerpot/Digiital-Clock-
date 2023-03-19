@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    background: url("universe.jpg");
+    color: #fff;
+    background-size: cover;
+    overflow: hidden;
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.clock {
+    display: flex;
+}
+
+.clock div {
+    margin: 5px;
+    position: relative;
+}
+
+.clock span {
+    width: 100px;
+    height: 80px;
+    background: hsl(0, 0%, 100%, 30%);
+    opacity: 0.8;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 1px;
+    ;
+}
+
+.clock .text {
+    height: 30px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+
+}
+
+.clock #ampm {
+    bottom: 0;
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    font-size: 17px;
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+.anticlockwise {
+    position: relative;
+    top: 10px;
+    right: 15px;
+    filter: brightness(0) invert(1);
+}
+
+.clockwise{
+    filter: brightness(0) invert(1);
+}
+.clockwise {
+    animation: rotate-wise 1s linear infinite;
+}
+
+@keyframes rotate-wise {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.anticlockwise {
+    animation: rotate-clock 1s linear infinite;
+
+}
+
+@keyframes rotate-clock {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .clock span {
+        max-width: 80px;
+    }
+
+    .clock .text {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    .clock div {
+        margin: -15px;
+    }
+
+    .clock span {
+        max-width: 60%;
+    }
+
+    .clock .text {
+        font-size: 0.6rem;
+    }
+
+    .clock #ampm {
+        font-size: 0.8rem;
+        max-width: 30px;
+    }
+
+}
